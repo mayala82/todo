@@ -1,16 +1,9 @@
 import React from "react";
 
 function TodoItems(props){
-    let icon = "❌" ;
-
-    if(props.completed)
-    {
-        icon = "✔️";
-    }
-
-    return (
+     return (
         <li className="todo-items">
-            <span className="mr-5">{icon}</span>
+            <span className="mr-5">{props.completed ? "✔️" : "❌"}</span>
             <p className= {props.completed ? 'line-through italic' : ''}>{props.text}</p>
             <span></span>
         </li>
