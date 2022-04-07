@@ -1,9 +1,9 @@
 .counter-text{
-    @apply text-cyan-500 text-center text-2xl font-bold mt-5 uppercase;
+    @apply text-cyan-700 text-center text-2xl font-bold mt-5 uppercase;
 }
 
 .todo-search{
-    @apply border-2 rounded px-2 py-1 mx-auto bg-gray-200 w-4/6 focus:bg-white;
+    @apply border-2 rounded px-2 py-1 mx-auto bg-gray-200 w-full focus:bg-white;
 }
 
 .todo-list{
@@ -14,5 +14,8 @@
     @apply  rounded px-4 py-2 text-white bg-cyan-500 hover:bg-cyan-700;
 }
 
+.todo-items{
+    @apply rounded px-4 py-4 w-full bg-cyan-700 text-white mt-3 flex flex-row shadow-lg shadow-slate-400 capitalize hover:bg-cyan-900;
+}
 
 
