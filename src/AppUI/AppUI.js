@@ -7,6 +7,8 @@ import { TodoItems } from '../TodoItems';
 import {CreateTodoButton} from '../CreateTodoButton';
 
 function AppUI({
+  loading,
+  error,
   totalTodos,
     completedTodos,
     searchedTodos,
@@ -25,14 +27,17 @@ function AppUI({
               searchValue={searchValue}
               setSearchValue={setSearchValue}
           />
-          {  <TodoList>
-              {
-                searchedTodos.map(todo => (
+            <TodoList>   
+                         
+                { error && <p>Se ha presentado un problema.. </p> }
+                { loading && <p>Cargando información en el sistema.. </p> }
+                { (!loading && !searchedTodos.length) && <p className="todo-warning"><span className="todo-alert-title">Bienvenido!!!</span> Crea tu primer TODO!!</p> }
+                { searchedTodos.map(todo => (
                   <TodoItems key={todo.text} text={todo.text} completed={todo.completed} onComplete={()=>completeTodos(todo.text)} onDelete={()=>{deleteTodo(todo.text)}} />
-                ))
-              }            
+                 )) }
+                          
             </TodoList> 
-          } 
+           
           <CreateTodoButton /> 
       </React.Fragment>
     );
